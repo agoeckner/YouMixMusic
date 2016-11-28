@@ -1,8 +1,10 @@
-CS 252 Lab 6
+YouMix Music
 ============
 
-Members
--------
+This is a project for CS 252000 at Purdue University.
+
+Project Members
+---------------
 
  * Anthony Goeckner <agoeckne@purdue.edu>
  * Colin Ashburn    <cashburn@purdue.edu>
