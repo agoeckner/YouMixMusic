@@ -5,17 +5,19 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 
+using YouMixMusic.Models;
+
 namespace YouMixMusic.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/playlist")]
     public class PlaylistController : Controller
     {
-		/*[HttpPost]
+		[HttpPost]
 		[ActionName("playlist-add")]
 		public void addToPlaylist([FromBody]Playlist list, [FromBody]string yid)
 		{
 			Console.WriteLine("Added video with YID {0}.");
-		}*/
+		}
 
 		[HttpPost]
 		[ActionName("playlist-create")]
@@ -24,7 +26,7 @@ namespace YouMixMusic.Controllers
 			Console.WriteLine("Created a new playlist with name {0}.");
 		}
 
-        // GET: api/Playlist
+        /*// GET: api/Playlist
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -51,6 +53,6 @@ namespace YouMixMusic.Controllers
         // DELETE: api/Playlist/5
         public void Delete(int id)
         {
-        }
+        }*/
     }
 }
