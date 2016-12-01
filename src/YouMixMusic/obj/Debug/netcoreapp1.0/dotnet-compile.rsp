@@ -1,5 +1,5 @@
---temp-output:C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\obj\Debug\netcoreapp1.0\
---out:C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\bin\Debug\netcoreapp1.0\YouMixMusic.dll
+--temp-output:C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\bin\Debug\netcoreapp1.0\YouMixMusic.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -7,6 +7,7 @@
 --suppress-warning:CS1702
 --suppress-warning:CS1705
 --optimize:False
+--debug-type:portable
 --emit-entry-point:True
 --output-name:YouMixMusic
 --file-version:1.0.0.0
@@ -191,8 +192,8 @@
 --reference:C:\Users\Colin\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Colin\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Colin\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\obj\Debug\netcoreapp1.0\YouMixMusicdotnet-compile.deps.json",YouMixMusic.deps.json
-C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\Program.cs
-C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\Startup.cs
-C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\Controllers\HomeController.cs
-C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\Controllers\PlaylistController.cs
+--resource:"C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\obj\Debug\netcoreapp1.0\YouMixMusicdotnet-compile.deps.json",YouMixMusic.deps.json
+C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\Program.cs
+C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\Startup.cs
+C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\Controllers\HomeController.cs
+C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\Controllers\PlaylistController.cs

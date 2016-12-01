@@ -4,11 +4,11 @@
 -nowarn:CS1701
 -nowarn:CS1702
 -nowarn:CS1705
--debug:full
+-debug:portable
 -nostdlib
 -nologo
-"C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\bin\Debug\netcoreapp1.0\YouMixMusic.dll"
+"C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\bin\Debug\netcoreapp1.0\YouMixMusic.dll"
 -r:"C:\Users\Colin\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.1\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll"
 -r:"C:\Users\Colin\.nuget\packages\Microsoft.AspNetCore.Authorization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authorization.dll"
 -r:"C:\Users\Colin\.nuget\packages\Microsoft.AspNetCore.Cors\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cors.dll"
@@ -187,8 +187,8 @@
 -r:"C:\Users\Colin\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\Colin\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Colin\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
--resource:"C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\obj\Debug\netcoreapp1.0\YouMixMusicdotnet-compile.deps.json",YouMixMusic.deps.json
-"C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\Program.cs"
-"C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\Startup.cs"
-"C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\Controllers\HomeController.cs"
-"C:\Users\Colin\Documents\Visual Studio 2015\Projects\YouMixMusic\src\YouMixMusic\Controllers\PlaylistController.cs"
+-resource:"C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\obj\Debug\netcoreapp1.0\YouMixMusicdotnet-compile.deps.json",YouMixMusic.deps.json
+"C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\Program.cs"
+"C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\Startup.cs"
+"C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\Controllers\HomeController.cs"
+"C:\Users\Colin\Documents\GitHub\YouMixMusic\src\YouMixMusic\Controllers\PlaylistController.cs"
