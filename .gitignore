@@ -1,1 +1,3 @@
-﻿*.suo
+*.suo
+bin/
+obj/
