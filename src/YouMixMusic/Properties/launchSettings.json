@@ -17,20 +17,8 @@
     },
     "YouMixMusic": {
       "commandName": "Project",
-      "launchBrowser": {
-        "enabled": true,
-        "args": "${auto-detect-url}",
-        "windows": {
-          "command": "cmd.exe",
-          "args": "/C start ${auto-detect-url}"
-        },
-        "osx": {
-          "command": "open"
-        },
-        "linux": {
-          "command": "xdg-open"
-        }
-      },
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:80",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
