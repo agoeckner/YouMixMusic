@@ -40,15 +40,16 @@
   },
 
   "buildOptions": {
-    "emitEntryPoint": true,
-    "preserveCompilationContext": true,
     "copyToOutput": {
       "include": [
         "wwwroot",
         "Views",
         "appsettings.json"
       ]
-    }
+    },
+    "debugType": "portable",
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
   },
 
   "runtimeOptions": {
