@@ -18,6 +18,7 @@ namespace YouMixMusic
 
             var host = new WebHostBuilder()
                 .UseKestrel()
+                .UseConfiguration(config)
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
