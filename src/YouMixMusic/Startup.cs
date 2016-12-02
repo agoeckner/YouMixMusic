@@ -8,8 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-using YouMixMusic.Models;
-
 namespace YouMixMusic
 {
     public class Startup
@@ -21,9 +19,6 @@ namespace YouMixMusic
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
-
-			// Set up the database handler.
-			DatabaseHandler dbHandler = new DatabaseHandler(Configuration["Database:ConnectionStrings:DefaultConnection"]);
         }
 
         public IConfigurationRoot Configuration { get; }

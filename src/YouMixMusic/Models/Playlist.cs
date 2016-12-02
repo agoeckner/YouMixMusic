@@ -7,18 +7,28 @@ namespace YouMixMusic.Models
 {
     public class Playlist
     {
-		private string name;
+		public string name;
+		public int plid;
 		private string[] songs;
 
 		public Playlist(string name)
 		{
 			this.name = name;
+			this.plid = new Random().Next(0, 999999); //TODO: This is terrible.
 			this.songs = null;
 		}
 
-		public Playlist(string name, string[] songs)
+		public Playlist(string name, int id)
 		{
 			this.name = name;
+			this.plid = id;
+			this.songs = null;
+		}
+
+		public Playlist(string name, int id, string[] songs)
+		{
+			this.name = name;
+			this.plid = id;
 			this.songs = songs;
 		}
 
