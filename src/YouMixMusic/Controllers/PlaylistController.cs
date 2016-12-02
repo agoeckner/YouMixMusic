@@ -9,7 +9,7 @@ using YouMixMusic.Models;
 
 namespace YouMixMusic.Controllers
 {
-    [Route("api/playlist")]
+    [Route("api/{controller}")]
     public class PlaylistController : Controller
     {
 		[HttpPost]
