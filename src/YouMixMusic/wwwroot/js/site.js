@@ -1,6 +1,7 @@
 ﻿console.log("script loaded");
 $('#searchForm').submit(function () {
-    console.log($('#SearchField')[0].value);
+	console.log($('#SearchField')[0].value);
+	clearSearchResults();
     getSearch($('#SearchField')[0].value);
     return false;
 });
@@ -14,6 +15,13 @@ function getSearch(searchTerm) {
                     searchResults(data);
                 }
     );
+}
+
+function clearSearchResults() {
+	var parent = document.getElementById("results");
+	while (parent.hasChildNodes()) {
+		parent.removeChild(parent.lastChild);
+	}
 }
 
 function searchResults(data) {
@@ -40,7 +48,7 @@ function searchResults(data) {
         li.appendChild(heading);
         li.appendChild(body);
         parent.appendChild(li);
-        console.log(li);
+        //console.log(li);
     }
     
     /*
