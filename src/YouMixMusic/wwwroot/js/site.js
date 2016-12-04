@@ -11,7 +11,8 @@ function getSearch(searchTerm) {
     var images = document.getElementsByClassName('yt-thumb');
     $.get("https://www.googleapis.com/youtube/v3/search?" +
                 "part=snippet&maxResults=10&q=" + searchTerm +
-                "&key=AIzaSyC1KDOmFxYy_81d_ydVs46RuM-mMtfA_wg", function (data) {
+                "&key=AIzaSyC1KDOmFxYy_81d_ydVs46RuM-mMtfA_wg" +
+				"&type=video", function (data) {
                     searchResults(data);
                 }
     );
