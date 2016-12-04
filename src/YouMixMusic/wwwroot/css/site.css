@@ -37,3 +37,24 @@ textarea {
   }
 }
 
+.panel-info {
+    border: none;
+}
+
+.panel-info > .panel-heading {
+    border: none;
+    background-color: #2e2f33;
+
+}
+
+.panel-body {
+    background-color: #222327;
+}
+
+body {
+    background-color: #121315;
+}
+
+.navbar-inverse {
+    background-color: #222327;
+}

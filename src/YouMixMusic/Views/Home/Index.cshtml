@@ -11,13 +11,29 @@
 </style>
 
 <!-- Bootstrap 3 panel list. -->
-<ul id="draggablePanelList" class="list-unstyled">
-    <li class="panel panel-info">
-        <div class="panel-heading">You can drag this panel.</div>
-        <div class="panel-body">Content ...</div>
-    </li>
-    <li class="panel panel-info">
-        <div class="panel-heading">You can drag this panel too.</div>
-        <div class="panel-body">Content ...</div>
-    </li>
-</ul>
+<div class="col-md-8">
+    <form id="searchForm">
+        <input id="SearchField" type="search" name="search" placeholder=" Search " autofocus /><input id="searchSubmit" type="submit" value="Go" class="" />
+    </form>
+
+    <h2>Results</h2>
+    <ul id="results">
+        <li class="panel panel-info">
+            <div class="panel-heading">Kansas - Carry On Wayward Son</div>
+            <div class="panel-body"><img src="https://i.ytimg.com/vi/2X_2IdybTV0/default.jpg" alt="Kansas - Carry On Wayward Son" style="width: 30%;"</img></div>
+        </li>
+    </ul>
+</div>
+<div class="col-md-4">
+    <h2>Playlist</h2>
+    <ul id="draggablePanelList" class="list-unstyled">
+        <li class="panel panel-info">
+            <div class="panel-heading">Kansas - Carry On Wayward Son</div>
+            <div class="panel-body"><img src="https://i.ytimg.com/vi/2X_2IdybTV0/default.jpg" alt="Kansas - Carry On Wayward Son" style="width: 30%;"</img></div>
+        </li>
+        <li class="panel panel-info">
+            <div class="panel-heading">You can drag this panel too.</div>
+            <div class="panel-body">Content ...</div>
+        </li>
+    </ul>
+</div>
