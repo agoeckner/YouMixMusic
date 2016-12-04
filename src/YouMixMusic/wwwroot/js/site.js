@@ -1,7 +1,13 @@
 ﻿console.log("script loaded");
+
+// Register results panel.
+var resultsPanel = document.getElementById("results");
+uiRegisterPanel(resultsPanel);
+
 $('#searchForm').submit(function () {
 	console.log($('#SearchField')[0].value);
 	clearSearchResults();
+	uiSetPanel(resultsPanel)
     getSearch($('#SearchField')[0].value);
     return false;
 });
@@ -19,9 +25,8 @@ function getSearch(searchTerm) {
 }
 
 function clearSearchResults() {
-	var parent = document.getElementById("results");
-	while (parent.hasChildNodes()) {
-		parent.removeChild(parent.lastChild);
+	while (resultsPanel.hasChildNodes()) {
+		resultsPanel.removeChild(resultsPanel.lastChild);
 	}
 }
 
@@ -30,11 +35,9 @@ function searchResults(data) {
     console.log("inside searchResults");
     var results = data.items;
     var length = results.length;
-    var parent = document.getElementById("results");
     for (var i = 0; i < length; i++) {
         var li = uiCreateRow(results[i]);
-        parent.appendChild(li);
-        console.log(li);
+        resultsPanel.appendChild(li);
     }
     
     /*
