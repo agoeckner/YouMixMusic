@@ -31,24 +31,9 @@ function searchResults(data) {
     var length = results.length;
     var parent = document.getElementById("results");
     for (var i = 0; i < length; i++) {
-        var li = document.createElement("li");
-        li.setAttribute("class", "panel panel-info");
-        var heading = document.createElement("div");
-        heading.setAttribute("class", "panel-heading");
-        var title = document.createTextNode(results[i].snippet.title);
-        var body = document.createElement("div");
-        body.setAttribute("class", "panel-body");
-        var img = document.createElement("img");
-        img.setAttribute("alt", results[i].id.videoId);
-        img.setAttribute("src", results[i].snippet.thumbnails.default.url);
-        img.setAttribute("style", "width: 30%;");
-
-        body.appendChild(img);
-        heading.appendChild(title);
-        li.appendChild(heading);
-        li.appendChild(body);
+        var li = uiCreateRow(results[i]);
         parent.appendChild(li);
-        //console.log(li);
+        console.log(li);
     }
     
     /*
