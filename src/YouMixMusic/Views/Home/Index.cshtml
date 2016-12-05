@@ -11,12 +11,27 @@
 </style>
 
 <!-- Bootstrap 3 panel list. -->
-<div class="col-md-8">
-    <h2>Results</h2>
-    <div id="results"></div>
+<div class="" style="height: 95%">
+    <div class="col-md-8" style="height: 100%">
+        <form id="searchForm">
+            <input id="SearchField" type="search" name="search" placeholder=" Search " autofocus /><input id="searchSubmit" type="submit" value="Go" class="" />
+        </form>
+
+        <h2>Results</h2>
+        <div id="results"></div>
+    </div>
+    <div class="col-md-4" style="height: 100%">
+        <h2 style="height: 5%;">Play Queue</h2>
+        <div class="scroll-pane">
+            <ol id="queue"></ol>
+        </div>
+        <div id="queue-controls">
+            <a href="#" onclick=queueClear()>Clear Queue</a>
+        </div>
+    </div>
 </div>
-<div class="col-md-4">
-    <h2>Current Queue</h2>
-    <ol id="queue"></ol>
-    <a href="#" onclick=queueClear()>Clear Queue</a>
-</div>
+
+<footer style="height: 5%">
+    <hr style="border-color: #808080" />
+    <p>&copy; 2016 - YouMix Music</p>
+</footer>

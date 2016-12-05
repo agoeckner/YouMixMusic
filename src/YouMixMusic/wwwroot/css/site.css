@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    height: 100vh;
 }
 
 /* Wrapping element */
@@ -8,6 +9,8 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    height: 80%;
+    /*overflow: hidden;*/
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -17,16 +20,16 @@ textarea {
     max-width: 280px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+/*Scroll panes*/
+.scroll-pane {
+    height: 80%;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"]
-{
-    width: 100%;
+/*Queue*/
+.queue-controls {
+    height: 15%;
 }
 
 /* Hide/rearrange for smaller screens */
