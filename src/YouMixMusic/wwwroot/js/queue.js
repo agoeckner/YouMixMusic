@@ -29,6 +29,7 @@ function queueRemoveIdx(idx) {
 }
 
 function queueClear() {
+	player.stopVideo();
 	_queueDisplayClear();
 	songQueue = [];
 }
@@ -36,6 +37,7 @@ function queueClear() {
 function queuePlayPause() {
 	// Just starting.
 	if (queueIndex < 0) {
+		videoPlayer.style.visibility = 'visible';
 		queuePlayNext();
 	}
 	// Pause
@@ -103,6 +105,7 @@ function _queueCreateRow(video, rowType, idx) {
 		queueRemoveIdx(idx);
 	});
 	$(title).click(function () {
+		queueIndex = idx;
 		queuePlayIdx(idx);
 		_queueDisplay();
 	});

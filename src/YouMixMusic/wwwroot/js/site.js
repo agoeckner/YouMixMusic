@@ -30,7 +30,7 @@ function getSearch(searchTerm) {
 }
 
 function loadVideo(YID) {
-	var initialURL = "https://www.youtube.com/embed/";
+	var initialURL = "http://www.youtube.com/embed/";
 	var parameters = "?controls=0&cc_load_policy=0&showinfo=0&modestbranding=1&enablejsapi=1&rel=0&autoplay=1";
 	var result = initialURL + YID + parameters;
 
@@ -52,24 +52,30 @@ function onYouTubeIframeAPIReady() {
 		height: '100%',
 		width: '20%',
 		events: {
-			'onReady': onPlayerReady
+			'onReady': onPlayerReady,
+			'onStateChange': onPlayerStateChange
+		},
+		playerVars: {
+			html5: 1
 		}
 	});
 }
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-	player.addEventListener('onStateChange', onPlayerStateChange);
+	console.log("Player ready")
 	videoPlayer = document.getElementById('videoPlayer');
-	event.target.playVideo();
-	videoPlayer.style.display = 'none';
+	if (queueIndex == -1) {
+		//player.addEventListener('onStateChange', onPlayerStateChange);
+		videoPlayer.style.float = 'left';
+		videoPlayer.style.visibility = 'hidden';
+	}
 }
 
 // 5. The API calls this function when the player's state changes.
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
 function onPlayerStateChange(event) {
-	player.addEventListener('onStateChange', onPlayerStateChange);
 	console.log("IT DID SOMETHING " + event.data);
 	if (event.data == YT.PlayerState.ENDED) {
 		queuePlayNext();
