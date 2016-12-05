@@ -7,6 +7,8 @@ uiRegisterPanel(queuePanel);
 
 var songQueue = [];
 
+var queueIndex = 0;
+
 function queueAdd(searchResult)
 {
 	songQueue.push(searchResult);
@@ -32,4 +34,27 @@ function queueDisplayClear() {
 	while (queueList.hasChildNodes()) {
 		queueList.removeChild(queueList.lastChild);
 	}
+}
+
+function queueNext() {
+    if (queueIndex >= songQueue) {
+        return;
+    }
+        var list = $("#queueList > li");
+        list[queueIndex].addClass("deselect");
+        list[queueIndex].removeClass("select");
+        queueIndex++;
+        list[queueIndex].addClass("select");
+}
+
+function queuePrev() {
+
+    if (queueIndex <= 0) {
+        return;
+    }
+        var list = $("#queueList > li");
+        list[queueIndex].addClass("deselect");
+        list[queueIndex].removeClass("select");
+        queueIndex--;
+        list[queueIndex].addClass("select");
 }

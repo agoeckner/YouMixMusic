@@ -68,3 +68,33 @@ body {
 .h2 {
     color: #88898D;
 }
+
+.select {
+    background-color: #2e2f33;
+}
+
+.deselect {
+    background-color: #222327;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #222327; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #222327; 
+}
