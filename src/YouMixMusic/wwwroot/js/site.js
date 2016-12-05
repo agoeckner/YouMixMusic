@@ -69,7 +69,8 @@ function onPlayerReady(event) {
 	if (queueIndex == -1) {
 		event.target.addEventListener('onStateChange', onPlayerStateChange);
 		videoPlayer.style.float = 'left';
-		videoPlayer.style.visibility = 'hidden';
+		//videoPlayer.style.visibility = 'hidden';
+		videoPlayer.style.display = 'none';
 	}
 }
 
