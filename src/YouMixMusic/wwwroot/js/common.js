@@ -41,10 +41,9 @@ function uiCreateRow(video, rowType) {
 	var heading = document.createElement("div");
 	heading.setAttribute("class", "panel-heading");
 	var addBtn = document.createElement("a");
-	addBtn.innerHTML = "<i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i>";
+	addBtn.innerHTML = "<b>+</b> " + video.snippet.title;
 	addBtn.setAttribute("href", "#");
 	addBtn.setAttribute("class", "listbtn listbtn-add");
-	var title = document.createTextNode(video.snippet.title);
 	var body = document.createElement("div");
 	body.setAttribute("class", "panel-body");
 	var img = document.createElement("img");
@@ -52,13 +51,12 @@ function uiCreateRow(video, rowType) {
 	img.setAttribute("src", video.snippet.thumbnails.default.url);
 	img.setAttribute("style", "width: 10%;");
 	var link = document.createElement("a");
-	link.innerText = "Open with YouTube";
+	link.innerText = "  Open with YouTube";
 	link.setAttribute("href", "http://youtube.com/watch?v=" + video.id.videoId);
 
 	body.appendChild(img);
 	body.appendChild(link);
 	heading.appendChild(addBtn);
-	heading.appendChild(title);
 	div.appendChild(heading);
 	div.appendChild(body);
 
