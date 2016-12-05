@@ -29,12 +29,8 @@ function getSearch(searchTerm) {
     );
 }
 
-function loadVideo(YID) {
-	var initialURL = "http://www.youtube.com/embed/";
-	var parameters = "?controls=0&cc_load_policy=0&showinfo=0&modestbranding=1&enablejsapi=1&rel=0&autoplay=1";
-	var result = initialURL + YID + parameters;
-
-	videoPlayer.src = result;
+function loadVideo(yid) {
+	player.loadVideoById(yid);
 }
 
 // 2. This code loads the IFrame Player API code asynchronously.
@@ -52,11 +48,15 @@ function onYouTubeIframeAPIReady() {
 		height: '100%',
 		width: '20%',
 		events: {
-			'onReady': onPlayerReady,
-			'onStateChange': onPlayerStateChange
+			'onReady': onPlayerReady
 		},
 		playerVars: {
-			html5: 1
+			html5: 1,
+			cc_load_policy: 0,
+			controls: 0,
+			modestbranding: 1,
+			rel: 0,
+			showinfo: 0
 		}
 	});
 }
@@ -64,9 +64,10 @@ function onYouTubeIframeAPIReady() {
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
 	console.log("Player ready")
+	event.target.playVideo();
 	videoPlayer = document.getElementById('videoPlayer');
 	if (queueIndex == -1) {
-		//player.addEventListener('onStateChange', onPlayerStateChange);
+		event.target.addEventListener('onStateChange', onPlayerStateChange);
 		videoPlayer.style.float = 'left';
 		videoPlayer.style.visibility = 'hidden';
 	}
@@ -76,7 +77,6 @@ function onPlayerReady(event) {
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
 function onPlayerStateChange(event) {
-	console.log("IT DID SOMETHING " + event.data);
 	if (event.data == YT.PlayerState.ENDED) {
 		queuePlayNext();
 	}
@@ -95,37 +95,6 @@ function searchResults(data) {
         var li = uiCreateRow(results[i], "div");
         resultsList.appendChild(li);
     }
-    
-    /*
-    var playlist = data.items;
-    var length = data.resultsPerPage;
-    for (i = 0, len = elementList.length; (i < len) ; i++) {
-        elementList[i].setAttribute("title", playlist[i].snippet.resourceId.videoId);
-        elementList[i].innerHTML = playlist[i].snippet.title;
-        elementList[i].onclick = function () {
-            videoId = this.getAttribute("title");
-            videoLink = "http://www.youtube.com/embed/" + videoId + "?rel=0";
-            if (display.getAttribute("src") != videoLink)
-                display.setAttribute("src", videoLink);
-            return false;
-        }
-        elementList[i].style.visibility = "visible";
-        images[i].setAttribute("src", "http://i.ytimg.com/vi/" + playlist[i].snippet.resourceId.videoId + "/mqdefault.jpg");
-        images[i].setAttribute("title", playlist[i].snippet.resourceId.videoId);
-        images[i].style.visibility = "visible";
-        images[i].onclick = function () {
-            videoId = this.getAttribute("title");
-            videoLink = "http://www.youtube.com/embed/" + videoId + "?rel=0";
-            if (display.getAttribute("src") != videoLink)
-                display.setAttribute("src", videoLink);
-            return false;
-        }
-        if ((i == 0)) {
-            videoId = elementList[0].getAttribute("title");
-            videoLink = "http://www.youtube.com/embed/" + videoId + "?rel=0";
-            display.setAttribute("src", videoLink);
-        }
-    }*/
 }
 
 function initialize() {
