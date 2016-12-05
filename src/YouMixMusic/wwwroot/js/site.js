@@ -82,21 +82,6 @@ function onPlayerStateChange(event) {
 	if (event.data == YT.PlayerState.ENDED) {
 		queuePlayNext();
 	}
-	else if (event.data == YT.PlayerState.PLAYING) {
-
-		$('#progressBar').show();
-		var playerTotalTime = player.getDuration();
-
-		mytimer = setInterval(function () {
-			var playerCurrentTime = player.getCurrentTime();
-			var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100;
-			setProgressBar(playerTimeDifference, $('#progressBar'));
-		}, 1000);
-	} else {
-
-		clearTimeout(mytimer);
-		$('#progressBar').hide();
-	}
 }
 
 function setProgressBar(percent, $element) {
