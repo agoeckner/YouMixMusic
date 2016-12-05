@@ -69,6 +69,14 @@ body {
     color: #88898D;
 }
 
+.listtitle {
+    display: inline-block;
+    max-width: 75%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden !important;
+}
+
 .listbtn{
     font-size: 16px;
     margin-left: 2px;

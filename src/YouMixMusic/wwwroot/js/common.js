@@ -40,7 +40,10 @@ function uiCreateRow(video, rowType) {
 	div.setAttribute("class", "panel panel-info");
 	var heading = document.createElement("div");
 	heading.setAttribute("class", "panel-heading");
-	var title = document.createTextNode(video.snippet.title);
+	var title = document.createElement("a");
+	title.innerText = video.snippet.title;
+	title.setAttribute("href", "#");
+	title.setAttribute("class", "listtitle");
 	var body = document.createElement("div");
 	body.setAttribute("class", "panel-body");
 	var img = document.createElement("img");
