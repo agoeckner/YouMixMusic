@@ -2,6 +2,7 @@
 
 // Register queue panel.
 var queuePanel = document.getElementById("queuePanel");
+var queueList = document.getElementById("queueList");
 uiRegisterPanel(queuePanel);
 
 var songQueue = [];
@@ -21,13 +22,13 @@ function queueDisplay() {
 	queueDisplayClear();
 	for (var i = 0; i < songQueue.length; i++) {
 		var row = uiCreateRow(songQueue[i], "li");
-		queuePanel.appendChild(row);
+		queueList.appendChild(row);
 	}
 	uiSetPanel(queuePanel, 1);
 }
 
 function queueDisplayClear() {
-	while (queuePanel.hasChildNodes()) {
-		queuePanel.removeChild(queuePanel.lastChild);
+	while (queueList.hasChildNodes()) {
+		queueList.removeChild(queueList.lastChild);
 	}
 }

@@ -42,16 +42,18 @@ textarea {
 
 .panel-info {
     border: none;
+    margin-bottom: 10px;
 }
 
 .panel-info > .panel-heading {
     border: none;
     background-color: #2e2f33;
-
+    padding: 3px 10px;
 }
 
 .panel-body {
     background-color: #222327;
+    padding: 5px 10px;
 }
 
 body {
