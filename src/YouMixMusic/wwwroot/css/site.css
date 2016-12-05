@@ -98,3 +98,17 @@ body {
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: #222327; 
 }
+}
+
+.listtitle {
+    display: inline-block;
+    max-width: 75%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden !important;
+}
+
+.listbtn{
+    font-size: 16px;
+    margin-left: 2px;
+}
