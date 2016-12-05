@@ -23,7 +23,8 @@
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
     "Microsoft.Extensions.Configuration.CommandLine": "1.0.0",
     "jQuery": "3.1.1",
-    "jQuery.UI.Combined": "1.12.1"
+    "jQuery.UI.Combined": "1.12.1",
+    "FontAwesome": "4.7.0"
   },
 
   "tools": {
