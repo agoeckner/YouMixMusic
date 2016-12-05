@@ -9,16 +9,30 @@ function uiRegisterPanel(panel) {
 	console.log("UI registered new panel: " + panel.id);
 }
 
+function uiHideAllPanels() {
+	for (var i = 0; i < uiPanels.length; i++) {
+		uiPanels[i].style.display = 'none';
+		uiLayers[i] = -1;
+	}
+}
+
 function uiSetPanel(panel, layer) {
-	console.log("UI set panel: " + panel.id);
+	idx = -1;
 	for (var i = 0; i < uiPanels.length; i++) {
 		if (uiLayers[i] == layer) {
 			uiPanels[i].style.display = 'none';
 			uiLayers[i] = -1;
 		}
+		if (uiPanels[i] == panel) {
+			idx = i;
+		}
 	}
-	uiLayers[i] = layer;
-	panel.style.display = 'block';
+	console.log("panel is at index " + idx);
+	if (panel != null && idx >= 0) {
+		console.log("UI set panel: " + panel.id + " layer: " + layer);
+		uiLayers[idx] = layer;
+		panel.style.display = 'block';
+	}
 }
 
 function uiCreateRow(video, rowType) {
@@ -27,12 +41,9 @@ function uiCreateRow(video, rowType) {
 	var heading = document.createElement("div");
 	heading.setAttribute("class", "panel-heading");
 	var addBtn = document.createElement("a");
-	addBtn.innerText = "+";
+	addBtn.innerHTML = "<i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i>";
 	addBtn.setAttribute("href", "#");
 	addBtn.setAttribute("class", "listbtn listbtn-add");
-	/*addBtn.setAttribute("click", function testing() {
-		queueAdd(video);
-	});*/
 	var title = document.createTextNode(video.snippet.title);
 	var body = document.createElement("div");
 	body.setAttribute("class", "panel-body");

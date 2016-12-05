@@ -13,10 +13,19 @@
 <!-- Bootstrap 3 panel list. -->
 <div class="" style="height: 95%">
     <div class="col-md-8" style="height: 100%">
-        <h2 style="height: 5%;">Results</h2>
-        <div class="scroll-pane" id="results" style="height: 95%;"></div>
+        <!-- Welcome Panel -->
+        <div id="welcomePanel">
+            <h2>Welcome to YouMix Music!</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <!-- Results Panel -->
+        <div id="resultsPanel" style="height: 100%; display: none;">
+            <h2 style="height: 5%;">Results</h2>
+            <div class="scroll-pane" id="resultsList" style="height: 80%;"></div>
+        </div>
     </div>
-    <div class="col-md-4" style="height: 100%">
+    <!-- Queue Panel -->
+    <div id="queuePanel" class="col-md-4" style="height: 100%; display: none;">
         <h2 style="height: 5%;">Play Queue</h2>
         <div class="scroll-pane" style="height: 80%;">
             <ol id="queue"></ol>

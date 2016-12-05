@@ -1,8 +1,11 @@
 ﻿console.log("script loaded");
 
-// Register results panel.
-var resultsPanel = document.getElementById("results");
+// Register panels.
+var resultsList = document.getElementById("resultsList");
+var resultsPanel = document.getElementById("resultsPanel");
 uiRegisterPanel(resultsPanel);
+var welcomePanel = document.getElementById("welcomePanel");
+uiRegisterPanel(welcomePanel);
 
 $('#searchForm').submit(function () {
 	console.log($('#SearchField')[0].value);
@@ -25,8 +28,8 @@ function getSearch(searchTerm) {
 }
 
 function clearSearchResults() {
-	while (resultsPanel.hasChildNodes()) {
-		resultsPanel.removeChild(resultsPanel.lastChild);
+	while (resultsList.hasChildNodes()) {
+		resultsList.removeChild(resultsList.lastChild);
 	}
 }
 
@@ -35,7 +38,7 @@ function searchResults(data) {
     var length = results.length;
     for (var i = 0; i < length; i++) {
         var li = uiCreateRow(results[i], "div");
-        resultsPanel.appendChild(li);
+        resultsList.appendChild(li);
     }
     
     /*
@@ -69,3 +72,10 @@ function searchResults(data) {
         }
     }*/
 }
+
+function initialize() {
+	uiHideAllPanels();
+	uiSetPanel(welcomePanel, 0);
+	uiSetPanel(queuePanel, 1);
+}
+initialize();
