@@ -7,7 +7,7 @@ uiRegisterPanel(resultsPanel);
 $('#searchForm').submit(function () {
 	console.log($('#SearchField')[0].value);
 	clearSearchResults();
-	uiSetPanel(resultsPanel)
+	uiSetPanel(resultsPanel, 0)
     getSearch($('#SearchField')[0].value);
     return false;
 });
@@ -36,7 +36,7 @@ function searchResults(data) {
     var results = data.items;
     var length = results.length;
     for (var i = 0; i < length; i++) {
-        var li = uiCreateRow(results[i]);
+        var li = uiCreateRow(results[i], "div");
         resultsPanel.appendChild(li);
     }
     
