@@ -77,10 +77,34 @@ function onPlayerReady(event) {
 // 5. The API calls this function when the player's state changes.
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
+var mytimer;
 function onPlayerStateChange(event) {
 	if (event.data == YT.PlayerState.ENDED) {
 		queuePlayNext();
 	}
+	else if (event.data == YT.PlayerState.PLAYING) {
+
+		$('#progressBar').show();
+		var playerTotalTime = player.getDuration();
+
+		mytimer = setInterval(function () {
+			var playerCurrentTime = player.getCurrentTime();
+			var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100;
+			setProgressBar(playerTimeDifference, $('#progressBar'));
+		}, 1000);
+	} else {
+
+		clearTimeout(mytimer);
+		$('#progressBar').hide();
+	}
+}
+
+function setProgressBar(percent, $element) {
+	var progressBarWidth = percent * $element.width() / 100;
+
+	// $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "%&nbsp;");
+
+	$element.find('div').animate({ width: progressBarWidth });
 }
 
 function clearSearchResults() {
@@ -99,6 +123,15 @@ function searchResults(data) {
 }
 
 function initialize() {
+	$.get(
+		"./api/motd",
+		null,
+		function (data) {
+			console.log("Got MOTD.");
+			welcomePanel.innerHTML = welcomePanel.innerHTML + "<br /><br />" + data;
+		}
+	);
+
 	uiHideAllPanels();
 	uiSetPanel(welcomePanel, 0);
 	uiSetPanel(queuePanel, 1);
