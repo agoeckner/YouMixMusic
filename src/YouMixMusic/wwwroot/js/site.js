@@ -27,6 +27,23 @@ function getSearch(searchTerm) {
     );
 }
 
+function loadVideo(YID) {
+	var initialURL = "https://www.youtube.com/embed/";
+	var parameters = "?controls=0&cc_load_policy=0&showinfo=0&modestbranding=1&enablejsapi=1&rel=0";
+	var result = initialURL + YID + parameters;
+
+	document.getElementById['videoPlayer'].src = result;
+}
+
+function pause() {
+	player.pause;
+}
+
+function play() {
+	player.play;
+}
+
+
 function clearSearchResults() {
 	while (resultsList.hasChildNodes()) {
 		resultsList.removeChild(resultsList.lastChild);
