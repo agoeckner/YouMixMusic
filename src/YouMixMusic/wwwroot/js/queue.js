@@ -6,7 +6,7 @@ var queueList = document.getElementById("queueList");
 uiRegisterPanel(queuePanel);
 
 var songQueue = [];
-var queueIndex = 0;
+var queueIndex = -1;
 
 function queueAdd(video)
 {
@@ -32,8 +32,28 @@ function queueClear() {
 	songQueue = [];
 }
 
-function queuePlayIdx(idx) {
+function queuePlayPause() {
+	// Just starting.
+	if (queueIndex < 0) {
+		queueIndex = 0;
+		queuePlayNext();
+	}
+	// Pause
+	if ($("#playBtn").hasClass("fa-pause")) {
+		player.pauseVideo();
+		$("#playBtn").removeClass("fa-pause");
+		$("#playBtn").addClass("fa-play");
+	}
+	// Resume
+	else {
+		player.playVideo();
+		$("#playBtn").removeClass("fa-play");
+		$("#playBtn").addClass("fa-pause");
+	}
+}
 
+function queuePlayIdx(idx) {
+	loadVideo(songQueue[idx].id.videoId);
 }
 
 function _queueDisplay() {
@@ -97,27 +117,21 @@ function _queueCreateRow(video, rowType, idx) {
 	return div;
 }
 
-function queueNext() {
+function queuePlayNext() {
     if (queueIndex >= songQueue) {
         return;
     }
-    var list = $("#queueList > li");
-    list[queueIndex].addClass("deselect");
-    list[queueIndex].removeClass("select");
     queueIndex++;
-    list[queueIndex].addClass("select");
     _queueDisplay();
+	queuePlayIdx(queueIndex);
 }
 
-function queuePrev() {
+function queuePlayPrev() {
 
     if (queueIndex <= 0) {
         return;
     }
-    var list = $("#queueList > li");
-    list[queueIndex].addClass("deselect");
-    list[queueIndex].removeClass("select");
     queueIndex--;
-    list[queueIndex].addClass("select");
     _queueDisplay();
+	queuePlayIdx(queueIndex);
 }

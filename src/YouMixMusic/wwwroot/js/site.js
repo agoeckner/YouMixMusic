@@ -1,5 +1,7 @@
 ﻿console.log("script loaded");
 
+var videoPlayer = document.getElementById('videoPlayer');
+
 // Register panels.
 var resultsList = document.getElementById("resultsList");
 var resultsPanel = document.getElementById("resultsPanel");
@@ -29,20 +31,49 @@ function getSearch(searchTerm) {
 
 function loadVideo(YID) {
 	var initialURL = "https://www.youtube.com/embed/";
-	var parameters = "?controls=0&cc_load_policy=0&showinfo=0&modestbranding=1&enablejsapi=1&rel=0";
+	var parameters = "?controls=0&cc_load_policy=0&showinfo=0&modestbranding=1&enablejsapi=1&rel=0&autoplay=1";
 	var result = initialURL + YID + parameters;
 
-	document.getElementById['videoPlayer'].src = result;
+	videoPlayer.src = result;
 }
 
-function pause() {
-	player.pause;
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+	player = new YT.Player('videoPlayer', {
+		height: '100%',
+		width: '20%',
+		events: {
+			'onReady': onPlayerReady
+		}
+	});
 }
 
-function play() {
-	player.play;
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+	player.addEventListener('onStateChange', onPlayerStateChange);
+	videoPlayer = document.getElementById('videoPlayer');
+	event.target.playVideo();
+	videoPlayer.style.display = 'none';
 }
 
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+function onPlayerStateChange(event) {
+	console.log("IT DID SOMETHING " + event.data);
+	if (event.data == YT.PlayerState.ENDED) {
+		queuePlayNext();
+	}
+}
 
 function clearSearchResults() {
 	while (resultsList.hasChildNodes()) {
