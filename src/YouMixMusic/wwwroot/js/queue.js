@@ -7,9 +7,7 @@ uiRegisterPanel(queuePanel);
 
 var songQueue = [];
 
-var queueIndex = 0;
-
-function queueAdd(searchResult)
+function queueAdd(video)
 {
 	songQueue.push(video);
 	_queueDisplay();
@@ -88,28 +86,4 @@ function _queueCreateRow(video, rowType, idx) {
 	});
 
 	return div;
-}
-}
-
-function queueNext() {
-    if (queueIndex >= songQueue) {
-        return;
-    }
-        var list = $("#queueList > li");
-        list[queueIndex].addClass("deselect");
-        list[queueIndex].removeClass("select");
-        queueIndex++;
-        list[queueIndex].addClass("select");
-}
-
-function queuePrev() {
-
-    if (queueIndex <= 0) {
-        return;
-    }
-        var list = $("#queueList > li");
-        list[queueIndex].addClass("deselect");
-        list[queueIndex].removeClass("select");
-        queueIndex--;
-        list[queueIndex].addClass("select");
 }
