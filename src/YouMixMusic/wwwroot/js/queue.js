@@ -1,7 +1,7 @@
 ﻿console.log("Load queue scripts.")
 
 // Register queue panel.
-var queuePanel = document.getElementById("queue");
+var queuePanel = document.getElementById("queuePanel");
 uiRegisterPanel(queuePanel);
 
 var songQueue = [];
