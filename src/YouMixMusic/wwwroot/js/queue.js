@@ -16,6 +16,7 @@ function queueAdd(searchResult)
 
 function queueClear() {
 	queueDisplayClear();
+	songQueue = [];
 }
 
 function queueDisplay() {
