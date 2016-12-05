@@ -6,6 +6,7 @@ var queueList = document.getElementById("queueList");
 uiRegisterPanel(queuePanel);
 
 var songQueue = [];
+var queueIndex = 0;
 
 function queueAdd(video)
 {
@@ -86,4 +87,27 @@ function _queueCreateRow(video, rowType, idx) {
 	});
 
 	return div;
+}
+
+function queueNext() {
+    if (queueIndex >= songQueue) {
+        return;
+    }
+        var list = $("#queueList > li");
+        list[queueIndex].addClass("deselect");
+        list[queueIndex].removeClass("select");
+        queueIndex++;
+        list[queueIndex].addClass("select");
+}
+
+function queuePrev() {
+
+    if (queueIndex <= 0) {
+        return;
+    }
+        var list = $("#queueList > li");
+        list[queueIndex].addClass("deselect");
+        list[queueIndex].removeClass("select");
+        queueIndex--;
+        list[queueIndex].addClass("select");
 }
