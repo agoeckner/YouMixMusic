@@ -55,7 +55,7 @@ function _queueCreateRow(video, rowType, idx) {
 	var div = document.createElement(rowType);
 	div.setAttribute("class", "panel panel-info");
 	var heading = document.createElement("div");
-	heading.setAttribute("class", "panel-heading");
+	heading.setAttribute("class", "panel-heading deselect");
 	var title = document.createElement("a");
 	title.innerText = video.snippet.title;
 	title.setAttribute("href", "#");
@@ -86,6 +86,14 @@ function _queueCreateRow(video, rowType, idx) {
 		queuePlayIdx(idx);
 	});
 
+	if (idx == queueIndex) {
+	    $(heading).css("background-color", "#3d3e43");
+	}
+
+	else {
+	    $(heading).css("background-color","#222327");
+	}
+
 	return div;
 }
 
@@ -93,11 +101,12 @@ function queueNext() {
     if (queueIndex >= songQueue) {
         return;
     }
-        var list = $("#queueList > li");
-        list[queueIndex].addClass("deselect");
-        list[queueIndex].removeClass("select");
-        queueIndex++;
-        list[queueIndex].addClass("select");
+    var list = $("#queueList > li");
+    list[queueIndex].addClass("deselect");
+    list[queueIndex].removeClass("select");
+    queueIndex++;
+    list[queueIndex].addClass("select");
+    _queueDisplay();
 }
 
 function queuePrev() {
@@ -105,9 +114,10 @@ function queuePrev() {
     if (queueIndex <= 0) {
         return;
     }
-        var list = $("#queueList > li");
-        list[queueIndex].addClass("deselect");
-        list[queueIndex].removeClass("select");
-        queueIndex--;
-        list[queueIndex].addClass("select");
+    var list = $("#queueList > li");
+    list[queueIndex].addClass("deselect");
+    list[queueIndex].removeClass("select");
+    queueIndex--;
+    list[queueIndex].addClass("select");
+    _queueDisplay();
 }
