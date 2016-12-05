@@ -9,16 +9,21 @@ var songQueue = [];
 function queueAdd(searchResult)
 {
 	songQueue.push(searchResult);
+	queueDisplay();
 	console.log("Added video to queue with ID: " + searchResult.id.videoId);
+}
+
+function queueClear() {
+	queueDisplayClear();
 }
 
 function queueDisplay() {
 	queueDisplayClear();
 	for (var i = 0; i < songQueue.length; i++) {
-		var row = uiCreateRow(songQueue[i]);
+		var row = uiCreateRow(songQueue[i], "li");
 		queuePanel.appendChild(row);
 	}
-	uiSetPanel(queuePanel);
+	uiSetPanel(queuePanel, 1);
 }
 
 function queueDisplayClear() {

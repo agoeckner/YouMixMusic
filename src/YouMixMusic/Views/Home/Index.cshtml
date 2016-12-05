@@ -17,19 +17,10 @@
     </form>
 
     <h2>Results</h2>
-    <ul id="results"></ul>
-    <ul id="queue"></ul>
+    <div id="results"></div>
 </div>
 <div class="col-md-4">
-    <h2>Playlist</h2>
-    <ul id="draggablePanelList" class="list-unstyled">
-        <li class="panel panel-info">
-            <div class="panel-heading">Kansas - Carry On Wayward Son</div>
-            <div class="panel-body"><img src="https://i.ytimg.com/vi/2X_2IdybTV0/default.jpg" alt="Kansas - Carry On Wayward Son" style="width: 30%;"</img></div>
-        </li>
-        <li class="panel panel-info">
-            <div class="panel-heading">You can drag this panel too.</div>
-            <div class="panel-body">Content ...</div>
-        </li>
-    </ul>
+    <h2>Current Queue</h2>
+    <ol id="queue"></ol>
+    <a href="#" onclick=queueClear()>Clear Queue</a>
 </div>
