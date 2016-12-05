@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - YouMixMusic</title>
+    <title>YouMix Music</title>
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="~/css/jquery-ui.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -19,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">YouMixMusic</a>
+                <a class="navbar-brand">YouMixMusic</a>
             </div>
             <div class="navbar-collapse collapse">
                 <form id="searchForm" class="pull-right" style="padding: 10px;">
@@ -31,6 +32,16 @@
     <div class="container body-content">
         @RenderBody()
     </div>
+
+    <footer style="height: 17%; background-color: #222327; position: fixed; bottom: 0; width: 100%;">
+        <iframe src="https://www.youtube.com/embed/gosY-UrpHcA" frameborder="0" style="overflow: hidden; height: 100%;position: absolute;" allowfullscreen></iframe>
+        <h1 class="text-center" style="padding-top: 2%;">
+            <i class="fa fa-fast-backward"></i>
+            <i class="fa fa-play"></i>
+            <i class="fa fa-fast-forward"></i>
+            
+        </h1>
+    </footer>
 
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/jquery/dist/jquery-ui.js"></script>
