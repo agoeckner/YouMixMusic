@@ -72,7 +72,7 @@ function searchResults(data) {
     }*/
 }
 
-jQuery(function ($) {
+/*jQuery(function ($) {
     var panelList = $('#draggablePanelList');
 
     panelList.sortable({
@@ -106,4 +106,4 @@ jQuery(function ($) {
             });
         }
     });
-});
+});*/
