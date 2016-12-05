@@ -69,6 +69,7 @@ function onPlayerReady(event) {
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
 function onPlayerStateChange(event) {
+	player.addEventListener('onStateChange', onPlayerStateChange);
 	console.log("IT DID SOMETHING " + event.data);
 	if (event.data == YT.PlayerState.ENDED) {
 		queuePlayNext();

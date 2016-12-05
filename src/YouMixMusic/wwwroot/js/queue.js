@@ -18,6 +18,7 @@ function queueAdd(video)
 function queueRemove(video) {
 	var idx = songQueue.indexOf(video);
 	queueRemoveIdx(idx);
+	_queueDisplay();
 }
 
 function queueRemoveIdx(idx) {
@@ -35,7 +36,6 @@ function queueClear() {
 function queuePlayPause() {
 	// Just starting.
 	if (queueIndex < 0) {
-		queueIndex = 0;
 		queuePlayNext();
 	}
 	// Pause
@@ -104,6 +104,7 @@ function _queueCreateRow(video, rowType, idx) {
 	});
 	$(title).click(function () {
 		queuePlayIdx(idx);
+		_queueDisplay();
 	});
 
 	if (idx == queueIndex) {
