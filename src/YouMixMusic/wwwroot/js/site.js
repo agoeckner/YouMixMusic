@@ -69,17 +69,27 @@ function onPlayerReady(event) {
 	if (queueIndex == -1) {
 		event.target.addEventListener('onStateChange', onPlayerStateChange);
 		videoPlayer.style.float = 'left';
-		videoPlayer.style.visibility = 'hidden';
+		//videoPlayer.style.visibility = 'hidden';
+		videoPlayer.style.display = 'none';
 	}
 }
 
 // 5. The API calls this function when the player's state changes.
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
+var mytimer;
 function onPlayerStateChange(event) {
 	if (event.data == YT.PlayerState.ENDED) {
 		queuePlayNext();
 	}
+}
+
+function setProgressBar(percent, $element) {
+	var progressBarWidth = percent * $element.width() / 100;
+
+	// $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "%&nbsp;");
+
+	$element.find('div').animate({ width: progressBarWidth });
 }
 
 function clearSearchResults() {
@@ -98,6 +108,15 @@ function searchResults(data) {
 }
 
 function initialize() {
+	$.get(
+		"./api/motd",
+		null,
+		function (data) {
+			console.log("Got MOTD.");
+			welcomePanel.innerHTML = welcomePanel.innerHTML + "<br /><br />" + data;
+		}
+	);
+
 	uiHideAllPanels();
 	uiSetPanel(welcomePanel, 0);
 	uiSetPanel(queuePanel, 1);

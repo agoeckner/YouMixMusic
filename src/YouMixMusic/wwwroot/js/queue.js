@@ -37,7 +37,7 @@ function queueClear() {
 function queuePlayPause() {
 	// Just starting.
 	if (queueIndex < 0) {
-		videoPlayer.style.visibility = 'visible';
+		//videoPlayer.style.visibility = 'visible';
 		queuePlayNext();
 	}
 	// Pause
@@ -108,6 +108,10 @@ function _queueCreateRow(video, rowType, idx) {
 		queueIndex = idx;
 		queuePlayIdx(idx);
 		_queueDisplay();
+		if (!$("#playBtn").hasClass("fa-pause")) {
+			$("#playBtn").removeClass("fa-play");
+			$("#playBtn").addClass("fa-pause");
+		}
 	});
 
 	if (idx == queueIndex) {
